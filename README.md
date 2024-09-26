@@ -191,6 +191,9 @@ Monitor the training progress stored in the `logs` directory on [Tensorboard](ht
 ${IsaacLab_PATH}/isaaclab.sh -p -m tensorboard.main --logdir=logs
 ```
 
+### Windows
+For Windows commands replace  ${IsaacLab_PATH}/isaaclab.sh with %IsaacLab_PATH%/isaaclab.bat
+
 ## Pre-Commit
 
 Pre-committing involves using a framework to automate the process of enforcing code quality standards before code is actually committed to a version control system, like Git. This process involves setting up hooks that run automated checks, such as code formatting, linting (checking for programming errors, bugs, stylistic errors, and suspicious constructs), and running tests. If these checks pass, the commit is allowed; if not, the commit is blocked until the issues are resolved. This ensures that all code committed to the repository adheres to the defined quality standards, leading to a cleaner, more maintainable codebase. To do so, we use the [pre-commit](https://pre-commit.com/) module. Install the module using:
