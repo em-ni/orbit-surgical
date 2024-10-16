@@ -59,6 +59,7 @@ def pre_process_actions(delta_pose: torch.Tensor, gripper_command: bool) -> torc
         # compute actions
         return torch.concat([delta_pose, gripper_vel], dim=1)
 
+
 def process_actions(teleop_interface, env, is_dual) -> torch.Tensor:
     """Process actions for the environment."""
     if is_dual:
