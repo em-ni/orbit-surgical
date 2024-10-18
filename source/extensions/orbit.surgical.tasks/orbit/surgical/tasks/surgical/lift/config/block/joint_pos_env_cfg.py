@@ -21,6 +21,8 @@ from orbit.surgical.tasks.surgical.lift.lift_env_cfg import LiftEnvCfg
 from omni.isaac.lab.markers.config import FRAME_MARKER_CFG  # isort: skip
 from orbit.surgical.assets.psm import PSM_CFG  # isort: skip
 
+# from pxr import PhysxSchema
+
 
 @configclass
 class BlockLiftEnvCfg(LiftEnvCfg):
@@ -53,6 +55,11 @@ class BlockLiftEnvCfg(LiftEnvCfg):
         )
         # Set the body name for the end effector
         self.commands.object_pose.body_name = "psm_tool_tip_link"
+
+        # Apply PhysX scene settings
+        # physxSceneAPI = PhysxSchema.PhysxSceneAPI.Apply(self.scene.physics_scene_prim)
+        # physxSceneAPI.CreateGpuTempBufferCapacityAttr(16 * 1024 * 1024 * 2)
+        # physxSceneAPI.CreateGpuHeapCapacityAttr(64 * 1024 * 1024 * 2)
 
         # Set Peg Block as object
         self.scene.object = RigidObjectCfg(
