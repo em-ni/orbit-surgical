@@ -1,22 +1,5 @@
-# Copyright (c) 2022-2024, The Isaac Lab Project Developers.
-# All rights reserved.
-#
-# SPDX-License-Identifier: BSD-3-Clause
-
-"""
-This script demonstrates how to use the differential inverse kinematics controller with the simulator.
-
-The differential IK controller can be configured in different modes. It uses the Jacobians computed by
-PhysX. This helps perform parallelized computation of the inverse kinematics.
-
-.. code-block:: bash
-
-    # Usage
-    ./isaaclab.sh -p source/standalone/tutorials/05_controllers/ik_control.py
-
-"""
-
-"""Launch Isaac Sim Simulator first."""
+# How to run:
+# %IsaacLab_PATH%\isaaclab.bat -p ur5.py
 
 import argparse
 
@@ -24,7 +7,7 @@ from omni.isaac.lab.app import AppLauncher
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Tutorial on using the differential IK controller.")
-parser.add_argument("--robot", type=str, default="franka_panda", help="Name of the robot.")
+parser.add_argument("--robot", type=str, default="ur5", help="Name of the robot.")
 parser.add_argument("--num_envs", type=int, default=128, help="Number of environments to spawn.")
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
